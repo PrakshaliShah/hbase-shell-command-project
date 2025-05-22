@@ -1,0 +1,5 @@
+hbase> scan 'myFirstTable', {COLUMNS => ['familyOne:price', 'familyOne:quantity'], LIMIT => 5, STARTROW => '100'}
+
+hbase> scan 'myFirstTable', {COLUMNS => ['familyOne:price', 'familyOne:quantity'], LIMIT => 10, STARTROW => '100', STOPROW =>105}
+
+hbase> scan 'myFirstTable', {COLUMNS => 'familyOne:price ', TIMERANGE => [1303668804, 1303668904]}

@@ -1,0 +1,53 @@
+create 'customer', 'ID', 'Cust_Name', {NAME =>'Address', VERSIONS =>3}, 'Demographics', {NAME =>'Paymemts', VERSIONS => 3}
+
+put 'customer', '171', 'Cust_Name:FirstName', 'Madelyn'
+
+put 'customer', '171', 'Cust_Name:LastName', 'Hensley'
+
+put 'customer', '171', 'Address:StreetAddress', '10075 Thierer Plaza'
+
+put 'customer', '171', 'Address:StreetAddress', '615 McCallie Ave'
+
+put 'customer', '171', 'Address:City', 'New York'
+
+put 'customer', '171', 'Address:State', 'New York'
+
+put 'customer', '171', 'Address:State', 'Tennessee'
+
+put 'customer', '171', 'Demographics:Gender', 'M'
+
+put 'customer', '171', 'Payments:Internet', 'True'
+
+put 'customer', '171', 'Payments:Internet', 'True'
+
+put 'customer', '171', 'Payments:Mobile', 'False'
+
+put 'customer', '171', 'Payments:Mobile', 'True'
+
+put 'customer', '171', 'Payments:Mobile', 'False'
+
+put 'customer', '172', 'Cust_Name:FirstName', 'Lony'
+
+put 'customer', '172', 'Cust_Name:LastName', 'Foster'
+
+put 'customer', '172', 'Address:State', 'Texas'
+
+put 'customer', '172', 'Address:Zip', '13498'
+
+put 'customer', '172', 'Demographics:BirthYear', '1981'
+
+put 'customer', '172', 'Demographics:Gender', 'F'
+
+put 'customer', '172', 'Payments:CreditCard', 'True'
+
+put 'customer', '172', 'Payments:Mobile', 'False'
+
+put 'customer', '172', 'Payments:Mobile', 'False'
+
+put 'customer', '172', 'Payments:Mobile', 'False'
+
+put 'customer', '171', 'Address:Zip', '81377'
+
+put 'customer', '171', 'Address:Zip', '37415'
+
+scan 'customer'

@@ -1,0 +1,49 @@
+hbase shell
+status
+status 'simple'
+status 'summary'
+status 'detailed' 
+version
+whoami
+create 'myFirstTable', {NAME =>'familyOne', VERSIONS => 5}
+create 'mySecondTable', {NAME =>'familyOne'}, {NAME =>'familyTwo'}, {NAME =>'familyThree'}
+create 'myThirdTable', 'familyOne', 'familyTwo', 'familyThree'
+create 'myFourthTable', {NAME =>'familyOne', VERSIONS => 1, TTL => 2592000, BLOCKCACHE => true}
+create 'myFifthTable', {NAME =>'familyOne', CONFIGURATION => {'hbase.hstore.blockingStoreFiles' =>'10'}}
+alter 'myFirstTable', {NAME =>'familyOne', VERSIONS => 3}
+alter 'mySecondTable', 'familyOne', {NAME =>'familyTwo', IN_MEMORY => true}, {NAME =>'familyThree', VERSIONS => 5}
+alter 'myThirdTable', {NAME =>'familyOne', METHOD =>'delete'}
+alter 'myThirdTable', 'delete' =>'familyOne'
+alter 'myFirstTable', MAX_FILESIZE =>'134217728'
+describe 'myFirstTable'
+disable 'mySecondTable'
+disable_all <"regex">
+is_disabled 'mySecondTable'
+is_enabled 'mySecondTable'
+drop 'mySecondTable'
+exists 'myFirstTable'
+list
+list '<table_name>'
+put 'myFirstTable', '100', 'familyOne:price', '$45'
+put 'myFirstTable', '100', 'familyOne:quantity', '250'
+put 'myFirstTable', '101', 'familyOne:price', '$42'
+put 'myFirstTable', '101', 'familyOne:price', '$35'
+put 'myFirstTable', '101', 'familyOne:quantity', '300'
+put 'myFirstTable', '100', 'familyOne:price', '$55'
+count 'myFirstTable'
+count 'myFirstTable', INTERVAL => 100000
+count 'myFirstTable', CACHE => 1000
+count 'myFirstTable', INTERVAL => 10, CACHE => 1000
+delete 'myFirstTable', '100', 'familyOne:price', 1450245
+deleteall 'myFirstTable', '100'
+incr 'myFirstTable', '100', 'familyOne:price'
+incr 'myFirstTable', '100', 'familyOne:quantity', 10
+get 'myFirstTable', '100'
+get 'myFirstTable', '100', {TIMERANGE => [1400000, 1500000]}
+get 'myFirstTable', '100', {COLUMN => 'familyOne:price'}
+get 'myFirstTable', '101', {COLUMN => ['familyOne:price', 'familyOne:quantity']}
+get 'myFirstTable', '101', {COLUMN => 'familyOne:price', TIMESTAMP => 1450445}
+get 'myFirstTable', '100', {COLUMN =>'familyOne:price', VERSIONS => 4}
+scan 'myFirstTable', {COLUMNS => ['familyOne:price', 'familyOne:quantity'], LIMIT => 5, STARTROW => '100'}
+scan 'myFirstTable', {COLUMNS => ['familyOne:price', 'familyOne:quantity'], LIMIT => 10, STARTROW => '100', STOPROW => '105'}
+scan 'myFirstTable', {COLUMNS => 'familyOne:price', TIMERANGE => [1303668804, 1303668904]}

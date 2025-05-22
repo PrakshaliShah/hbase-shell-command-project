@@ -1,0 +1,11 @@
+hbase> put 'myFirstTable', '100', 'familyOne:price', '$45'
+
+hbase> put 'myFirstTable', '100', 'familyOne:quantity', '250'
+
+hbase> put 'myFirstTable', '101', 'familyOne:price', '$42'
+
+hbase> put 'myFirstTable', '101', 'familyOne:price', '$35'
+
+hbase> put 'myFirstTable', '101', 'familyOne:quantity', '300'
+
+hbase> put 'myFirstTable', '100', 'familyOne:price', '$55'
