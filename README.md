@@ -39,22 +39,13 @@ It showcases NoSQL table design with column families for names, addresses, demog
 ## 📄 Sample Input
 
 ```bash
-put 'customer', '181', 'Cust_Name:FirstName', 'Madelyn'
-put 'customer', '181', 'Address:City', 'New York'
-put 'customer', '181', 'Payments:MobileBanking', 'FALSE'
+put 'customer', '171', 'Cust_Name:FirstName', 'Madelyn'
+put 'customer', '171', 'Address:City', 'New York'
+put 'customer', '171', 'Payments:MobileBanking', 'FALSE'
 ```
 
 ---
 
-## 📄 Sample Output
-
-hbase(main):001:0> scan 'customer'
-ROW COLUMN+CELL
- 181 column=Cust_Name:FirstName, timestamp=..., value=Madelyn
- 181 column=Address:City, timestamp=..., value=New York
- 181 column=Payments:MobileBanking, timestamp=..., value=FALSE
-
----
 
 ## 🖼️ Preview
 
