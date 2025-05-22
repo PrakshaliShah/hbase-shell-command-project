@@ -53,7 +53,6 @@ ROW COLUMN+CELL
  181 column=Cust_Name:FirstName, timestamp=..., value=Madelyn
  181 column=Address:City, timestamp=..., value=New York
  181 column=Payments:MobileBanking, timestamp=..., value=FALSE
-```
 
 ---
 
